@@ -8,6 +8,7 @@ filter: paper or mesh
 grind: null
 ratio: null
 brew_time: "~30 s press"
+website: https://en.wikipedia.org/wiki/AeroPress
 sources: [2026-10-02-wikipedia-coffee-preparation.md]
 related: [french-press, moka-pot, espresso-machine, which-brewer-for-which-bean]
 ---

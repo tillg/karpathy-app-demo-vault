@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-12
+updated: 2026-10-13
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -138,6 +138,21 @@ a value by itself. A vault can bring its own rules in `.karpathy/schema.json`.
 suggestions. Then tap **YAML**, change `type: entity` to `type: person`, and switch back with **Properties form**:
 `type` is flagged "must be entity, concept, topic, source or synthesis". Undo puts everything back.
 
+**Web addresses in properties are clickable.** In Read mode a bare `https://…` in any property is a link that opens
+in a new tab. In Write mode a text property whose value is one web address gets an **open ↗** button next to the
+field; the field stays editable, and the note's text is never rewritten.
+
+*Try it:* open [[aeropress]] in Write mode: `website` has an **open ↗** button. Switch to Read mode and click the
+address in the properties table. Then change the value to plain text in Write mode, and the button disappears.
+
+### Copy on select
+
+In Write mode, selecting text copies it to the clipboard at once, like a terminal: a **Copied** notice at the bottom
+confirms it. Double-click, drag, Shift+arrows and touch selections all copy; a plain click doesn't. Read mode keeps
+the browser's usual select-and-copy.
+
+*Try it:* open [[aeropress]] in Write mode, double-click a word, and paste it into the chat box.
+
 ## 6. Links
 
 - **Wikilinks** `[[page]]` open a page by its name, wherever it lives: [[aeropress]].
@@ -265,10 +280,26 @@ last is on top.
 *Try it:* ask the AI two or three questions in one chat and watch the count grow. Then go back to the chat list:
 your chat is first, with its time and its bar.
 
+### Suggested next prompt
+
+After an answer the AI may suggest what to ask next, as grey text in the empty message field. On a keyboard press
+**Tab**, on a phone or iPad tap **Tap to use**: the text moves into the field (nothing is sent yet), and Enter sends
+it. Start typing instead and the suggestion disappears; it comes back after a reload, until your next message.
+
+*Try it:* ask *"Which brewer should I use for a natural-process Ethiopian coffee?"*, wait for the answer, then take
+the suggestion with Tab or **Tap to use** and send it.
+
 ## 11. The AI opens notes for you
 
 Ask *"Open the AeroPress page"* or *"Show me my tour log"*. The AI opens the note in the editor: right away on a
 wide screen, or after its reply on a phone, and never while you're typing.
+
+It also works the other way round: the AI can ask which page **you** have open. Say *"this note"* or *"this page"*
+and a `current_page` chip shows it looking, then it reads that note. Edits you haven't saved yet aren't on disk, so
+it reads the saved text (and is told there are unsaved edits).
+
+*Try it:* open [[aeropress]], open the chat and type *"Summarize this note"*. Then open [[topology]] and ask
+*"And what is this one about?"*: the AI follows you.
 
 ## 12. The AI maintains the wiki
 
