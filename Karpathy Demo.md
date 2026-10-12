@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-08
+updated: 2026-10-12
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -87,6 +87,27 @@ opens in Read, even after a reload. Switching modes keeps your place in the note
 
 *Try it:* open [[topology]], scroll halfway down, switch Write ↔ Read, and you stay on the same paragraph.
 
+### Code files
+
+Only Markdown files (`.md`) are notes. Any other text file opens as what it is: a `.py`, `.ts`, `.js`, `.java`,
+`.sh`, `.json`, `.yaml` or `Dockerfile` shows its source with **syntax colours**, in a monospace font, with one view
+(no Write/Read, no outline, no properties). A file the app has no colours for, like a `.txt`, shows as **plain
+text**, every line break as written. You can still edit, find and delete it, and it autosaves like a note. An
+`.svg` shows as a picture. A new file you create with a name like `run.py` starts empty, not with a heading.
+
+*Try it:* open **Sources › demo › hello.py**: keywords and strings are coloured, and the `[[brew-ratio]]` in its
+comment stays plain text, not a link.
+
+### HTML pages
+
+An `.html` file has both modes. **Read** shows it as a web page, with its own styles and pictures from the vault;
+**Write** shows its source. HTML pages remember their own mode, Read by default, separately from your notes. A
+page in the app never runs scripts or forms, and pictures or stylesheets from the internet don't load (a picture
+shows as a link instead). Links to vault pages open in the app; other links open a new tab.
+
+*Try it:* open **Sources › demo › page.html**: a styled page with a coffee photo. Tap **brew ratio** to open the wiki
+page, then the back arrow to return. Switch to **Write** to see the HTML; your next note still opens in its own mode.
+
 ### Outline and note info
 
 The list button in the note header shows the page's **outline**: its headings, indented by level. On the phone it is
@@ -127,6 +148,15 @@ suggestions. Then tap **YAML**, change `type: entity` to `type: person`, and swi
 - **Properties link too:** in Read mode, the `related` and `sources` values in a page's properties table are links
   ([[aeropress]] has a big one).
 - **External links** open in a new tab. **Back** returns you to the same scroll position, after any link.
+
+### Back arrow
+
+After you follow a link (or open another file from the tree, search or a chip), a **↩** appears at the top left of
+the page. It takes you back to the file you came from, at the place you left it, like the browser's Back button, but
+it also works in the installed app on the iPad and iPhone, which has no Back button. It is gone on the first page
+you opened and when Back would leave the vault.
+
+*Try it:* open [[aeropress]], tap a link in it, then tap **↩**: you are back on [[aeropress]], where you were.
 
 ### The graph
 
@@ -224,6 +254,17 @@ Other things to know:
 - On a wide screen the **⇄** button swaps the columns, so the chat becomes the big main column and the note moves to
   the side.
 
+### Context meter
+
+Above the message field a thin bar and a count like `3,560 / 16,384` show how much of the model's **context** the
+chat uses: everything the AI has to read again for the next answer. The bar turns orange from 70 % and red from
+90 %: time to start a new chat. When a chat gets long, the AI may compact it (summarize it); the count then drops.
+The chat list shows the same bar under each chat's title, and the date and time of its last message; the chat used
+last is on top.
+
+*Try it:* ask the AI two or three questions in one chat and watch the count grow. Then go back to the chat list:
+your chat is first, with its time and its bar.
+
 ## 11. The AI opens notes for you
 
 Ask *"Open the AeroPress page"* or *"Show me my tour log"*. The AI opens the note in the editor: right away on a
@@ -255,6 +296,11 @@ sends nothing.
 - A vault that still keeps its skills in Claude Code's layout (`CLAUDE.md`, `.claude/skills/`) is moved to
   `AGENTS.md` and `.agents/skills/` when you open it. A notice lists what moved; **Review** shows the changes, which
   wait for your commit like any other edit.
+- The file tree shows the `.agents` folder, so you can read and edit a vault skill like any note. Other hidden
+  folders (`.git`, `.obsidian`, `.claude`) stay out of the tree.
+
+*Try it:* in a vault with its own skills, open **.agents › skills › <name> › SKILL** in the file tree and read
+what the command tells the AI.
 
 ### Deep research
 
@@ -270,6 +316,22 @@ sends nothing.
 
 *Try it:* type `/` in a new chat, pick **research** and add *pour-over grind size*. Read the plan note, reply
 **go**, then open the new pages from the chips.
+
+### Clean Markdown from the AI
+
+Every time the AI writes or edits a note, the app checks the file for Markdown that Obsidian would show broken, and
+tells the AI right away, so it fixes the note in the same turn. You don't see the check; you may see one more
+*changed* chip. Two mistakes are caught:
+
+- a wikilink broken across two lines (`[[page|long⏎alias]]` shows as plain text, not a link);
+- an aliased wikilink in a table row: the `|` of `[[page|alias]]` would split the cell, so in a table it is written
+  `[[page\|alias]]`.
+
+The table in [[brew-log]] already has one: `[[coffee-ethiopia\|Ethiopia]]` in Write mode, a plain link in Read mode.
+
+*Try it:* in a chat, ask *"Add a row for today to the table in [[brew-log]]:
+coffee [[coffee-ethiopia|the Ethiopian]], brewer [[aeropress]]."* Then open **brew-log** in Write mode: the new row has
+`[[coffee-ethiopia\|the Ethiopian]]`, and in Read mode the table keeps its columns.
 
 Nothing the AI does is final: its edits wait in **Changes** until you commit (chapter 14).
 
@@ -317,7 +379,27 @@ While a conflict is open, the AI can read but not change notes.
 - **Offline:** the notes you opened before stay readable. Edits wait on the device; search and chat need a
   connection.
 
-## 17. What it can't do yet
+## 17. Ingest from the inbox
+
+New material lands in **`Input/`**, the ingest queue: one folder per source not yet turned into wiki pages. On a
+server with mail set up, mails sent to the vault's address arrive there every 15 minutes, and the links in them
+(web pages, PDFs, YouTube, Instagram) follow a minute later as folders of their own. You can also drop a folder into
+`Input/` yourself (Obsidian, upload). `Sources/` is the archive of what was ingested.
+
+- The file tree shows a **red count** on `Input` (on the phone also on the Files tab): how many sources wait.
+- **Ingest** next to it opens a new chat and sends `/ingest`. This vault's own skill
+  (`.agents/skills/ingest/SKILL.md`) writes the pages, then moves each finished folder to `Sources/` with the AI tool
+  `move_to_sources`; the count goes down as it works. A vault without an `ingest` skill shows the count but no button.
+- Waiting sources don't trigger the commit reminder; the pages and the moves are uncommitted changes like any other
+  AI edit.
+- **Settings › Instagram** connects the server to Instagram (username, password, a 2FA code if Instagram asks) so
+  Instagram links can be fetched; the password is not stored.
+
+*Try it:* this vault has one source waiting, `Input/web-2026-10-08-moka-pot-basics` (a clipped page on the moka pot).
+Tap **Ingest** next to `Input · 1`, watch the chat write [[moka-pot-basics]] and move the folder, then look at the
+new page and at [[log]].
+
+## 18. What it can't do yet
 
 - No canvas or plugins.
 - No renaming or moving of notes, and no note transclusion: `![[Other note]]` shows a link.

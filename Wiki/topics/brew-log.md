@@ -13,7 +13,7 @@ time ([[grind-size]]).
 
 | Date | Coffee | Brewer | Ratio | Time | Taste | Next change |
 |---|---|---|---|---|---|---|
-| 2026-10-02 | [[coffee-ethiopia]] natural | [[v60]] | 1:16.7 (15 g / 250 g) | 3:10 | a bit sour (under-[[extraction]]) | grind finer, aim for ~4:00 |
+| 2026-10-02 | [[coffee-ethiopia\|Ethiopia]] natural | [[v60]] | 1:16.7 (15 g / 250 g) | 3:10 | a bit sour (under-[[extraction]]) | grind finer, aim for ~4:00 |
 
 Diagnosis shortcuts from the [[v60]] guide: fast + sour → finer / hotter / longer bloom; slow + bitter → coarser /
 cooler / shorter. The vault's pairing table ([[which-brewer-for-which-bean]]) sends naturals to immersion brewers
