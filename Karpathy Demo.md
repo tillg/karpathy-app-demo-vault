@@ -231,6 +231,13 @@ any other.
 https://upload.wikimedia.org/wikipedia/commons/9/9e/Emmy_noether_postcard_1915.jpg"* Check the new file in **Changes**, then discard it or
 keep it.
 
+**The AI can look at pictures.** The chat model reads text only, so for a picture it asks a separate image model
+through its `look_at_image` tool (a chip shows which file it looked at) and answers from that description. This works
+for pictures in the vault and for photos you attach to a message with **+**.
+
+*Try it:* ask the chat *"What does Sources/media/coffee-chemex.jpg show?"*, then attach a photo from your phone and
+ask *"What is in this picture?"*
+
 Details: files over 50 MB load only when you tap **Load anyway**. Images from other websites are not loaded
 (privacy: no tracking pixels). Offline, media shows a placeholder card.
 
