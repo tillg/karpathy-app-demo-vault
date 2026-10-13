@@ -336,6 +336,8 @@ sends nothing.
   wait for your commit like any other edit.
 - The file tree shows the `.agents` folder, so you can read and edit a vault skill like any note. Other hidden
   folders (`.git`, `.obsidian`, `.claude`) stay out of the tree.
+- A new skill shows up as soon as its `SKILL.md` is saved, whether you wrote it or the AI did: in the **/** list, in
+  the chips and for the **Ingest** button. No pull or reload needed.
 
 *Try it:* in a vault with its own skills, open **.agents › skills › <name> › SKILL** in the file tree and read
 what the command tells the AI.
