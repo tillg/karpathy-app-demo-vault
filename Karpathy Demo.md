@@ -147,11 +147,12 @@ address in the properties table. Then change the value to plain text in Write mo
 
 ### Copy on select
 
-In Write mode, selecting text copies it to the clipboard at once, like a terminal: a **Copied** notice at the bottom
-confirms it. Double-click, drag, Shift+arrows and touch selections all copy; a plain click doesn't. Read mode keeps
-the browser's usual select-and-copy.
+Selecting text copies it to the clipboard at once, like a terminal: a **Copied** notice at the bottom confirms it.
+Double-click, drag, Shift+arrows and touch selections all copy; a plain click and Cmd/Ctrl+A don't. It works in both
+modes: Write mode copies the Markdown, Read mode the text as you see it (a link copies as its name).
 
-*Try it:* open [[aeropress]] in Write mode, double-click a word, and paste it into the chat box.
+*Try it:* open [[aeropress]] in Write mode, double-click a word, and paste it into the chat box. Then switch to Read
+mode, select a sentence with a link in it, and paste again.
 
 ## 6. Links
 
