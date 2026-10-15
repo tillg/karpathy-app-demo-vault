@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-13
+updated: 2026-10-15
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -33,25 +33,34 @@ The topics are deliberately unrelated: [[mountains]] (ski tours, huts, safety), 
 - **QR login:** on a phone or iPad, scan the login QR code and you're in without typing the token.
 - **Install it:** *Share → Add to Home Screen* (Safari) or *Install app* (Chrome). It then opens full screen, like
   a native app.
-- **Updates:** a new version installs itself the next time you open the app. The settings dialog (⚙) shows which
+- **Updates:** a new version installs itself the next time you open the app. Admin mode (⚙) › General shows which
   version is running.
 
-## 3. Vaults and settings
+## 3. Vaults and admin mode
 
-Open **⚙ Vaults & settings**:
+The app has two modes. **User mode** is where you work: notes, search, chat. **Admin mode** is where the installation
+is configured and watched. The gear in the sidebar opens it (an **ADMIN** pill shows where you are), **Done** brings
+you back to the note you left. On a wide screen the sections sit in a rail on the left; on the phone you get a list,
+and each section has only **‹ Admin** back to it — leave admin mode from the list.
 
+- **Switch vault** stays in user mode, from the vault menu under the logo. Your open note is saved first.
+- **General:** the commit reminder and the version of server and app.
 - **Vaults:** one app, several vaults, each a GitHub repo (`owner/name`, branch, optional sub-folder). Before
   attaching a repo, the app checks it can reach it and that it has `Sources/` and `Wiki/`, and offers to create
-  missing folders.
-- **Switch vault** from the vault menu under the logo. Your open note is saved first.
-- **Settings:** the AI model, the GitHub token (**Test token** checks it without saving), the commit reminder, and
-  **Web access** (see chapter 13).
-- **The model:** the server's settings files choose a default model; below the model field the app shows
-  **Default: …**. A model you type there overrides the default for everyone until you tap **Use default** and save.
-  When the server's default changes, everyone who hasn't overridden it gets the new one.
+  missing folders. **Manage vaults…** in the vault menu opens this section directly.
+- **Secrets & keys:** the GitHub token (**Test token** checks it without saving), the Instagram login, and a table
+  of the deployment's secrets — which are set, which are missing — without ever showing a value.
+- **AI:** the model and **Web access** (see chapter 13). The server's settings files choose a default model; below
+  the model field the app shows **Default: …**. A model you type there overrides the default for everyone until you
+  tap **Use default** and save.
+- **Usage:** how many tokens the AI used, per day, per model and per vault, over 7 or 30 days, with the cost when the
+  provider reports it. Deleted chats drop out.
+- **Server:** CPU, memory, load and disk of the server over the last hour, day or week, and whether the AI harness
+  is up.
 
-*Try it:* open the settings, type another model the server offers, **Save**, then tap **Use default** and **Save**
-again: the line under the field says which model is the default.
+*Try it:* tap the gear, open **Usage** and look at today's bar; ask the AI something in a chat, come back and watch it
+grow. Then open **Server** and switch between **1 hour** and **7 days**. On the phone, notice there is no **Done**
+inside a section: go **‹ Admin** first.
 
 ## 4. Files and notes
 
@@ -297,6 +306,21 @@ it. Start typing instead and the suggestion disappears; it comes back after a re
 *Try it:* ask *"Which brewer should I use for a natural-process Ethiopian coffee?"*, wait for the answer, then take
 the suggestion with Tab or **Tap to use** and send it.
 
+### Time and place
+
+The AI knows your local date and time: every message carries your browser's time zone, so *"today"* late in the
+evening is still today, and notes the AI names by date (`/research`, journal entries) get your date, not the server's.
+
+When a question depends on where you are, the AI asks your device: a `user_location` chip appears, the browser asks
+once whether to share your location, and the AI gets your position, as precise as the device can tell. The chip
+shows the accuracy (*used your location (±12 m)*). Say no and the chip reads *location not shared*; the AI then asks
+you where you are. Only the tab you sent the message from answers, so a laptop left open at home never speaks for the
+phone in your pocket.
+
+*Try it:* ask *"What's today's date, and what weekday is it?"*. Then, with web access on (Settings), open
+[[aeropress]] and ask *"Find a café near me that serves AeroPress coffee"*: allow the location when the browser asks
+and watch the chip.
+
 ## 11. The AI opens notes for you
 
 Ask *"Open the AeroPress page"* or *"Show me my tour log"*. The AI opens the note in the editor: right away on a
@@ -378,7 +402,7 @@ Nothing the AI does is final: its edits wait in **Changes** until you commit (ch
 
 ## 13. The AI on the web
 
-With **Web access** on (⚙ → Settings; on by default), the AI can search the web and read web pages:
+With **Web access** on (⚙ → AI; on by default), the AI can search the web and read web pages:
 
 - *"What's the latest news on the Wildspitze glacier? Search the web."* shows a chip `searched the web: "…"`.
 - *"Read https://en.wikipedia.org/wiki/AeroPress and add anything new to the AeroPress page."* shows a chip
@@ -433,7 +457,7 @@ server with mail set up, mails sent to the vault's address arrive there every 15
   `move_to_sources`; the count goes down as it works. A vault without an `ingest` skill shows the count but no button.
 - Waiting sources don't trigger the commit reminder; the pages and the moves are uncommitted changes like any other
   AI edit.
-- **Settings › Instagram** connects the server to Instagram (username, password, a 2FA code if Instagram asks) so
+- **⚙ › Secrets & keys › Instagram** connects the server to Instagram (username, password, a 2FA code if Instagram asks) so
   Instagram links can be fetched; the password is not stored.
 
 *Try it:* this vault has one source waiting, `Input/web-2026-10-08-moka-pot-basics` (a clipped page on the moka pot).
