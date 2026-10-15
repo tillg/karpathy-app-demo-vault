@@ -317,7 +317,7 @@ shows the accuracy (*used your location (±12 m)*). Say no and the chip reads *l
 you where you are. Only the tab you sent the message from answers, so a laptop left open at home never speaks for the
 phone in your pocket.
 
-*Try it:* ask *"What's today's date, and what weekday is it?"*. Then, with web access on (Settings), open
+*Try it:* ask *"What's today's date, and what weekday is it?"*. Then, with web access on (⚙ → AI), open
 [[aeropress]] and ask *"Find a café near me that serves AeroPress coffee"*: allow the location when the browser asks
 and watch the chip.
 
