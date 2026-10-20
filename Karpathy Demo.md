@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-15
+updated: 2026-10-20
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -158,10 +158,12 @@ address in the properties table. Then change the value to plain text in Write mo
 
 Selecting text copies it to the clipboard at once, like a terminal: a **Copied** notice at the bottom confirms it.
 Double-click, drag, Shift+arrows and touch selections all copy; a plain click and Cmd/Ctrl+A don't. It works in both
-modes: Write mode copies the Markdown, Read mode the text as you see it (a link copies as its name).
+modes: Write mode copies the Markdown, Read mode the text as you see it (a link copies as its name). The chat's
+messages copy the same way; the chat box doesn't, so you can still select text there to replace it.
 
 *Try it:* open [[aeropress]] in Write mode, double-click a word, and paste it into the chat box. Then switch to Read
-mode, select a sentence with a link in it, and paste again.
+mode, select a sentence with a link in it, and paste again. Finally, double-click a word in one of the AI's answers
+and paste it into the chat box.
 
 ## 6. Links
 
