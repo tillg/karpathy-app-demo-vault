@@ -279,8 +279,24 @@ Details: files over 50 MB load only when you tap **Load anyway**. Images from ot
 - several words find notes that contain **all** of them: `spring snow`, `kenya natural`;
 - `"quotes"` match an exact phrase: `"Gold Cup"`.
 
+**It forgives how you type.** Case and accents don't matter: `hutte` finds "Breslauer Hütte" in [[wildspitze]].
+Words match in their other forms too: `glaciers` finds pages that only say "glacier", like [[fluchtkogel]]. Each
+note is searched in its own language (German, English, French, Spanish or Italian), detected when it is indexed or
+set with `lang:` in its frontmatter; in a German note `ue`, `oe` and `ae` also stand for ü, ö and ä.
+
+**Results come while you type.** The last word also matches as the beginning of a word, so `aerop` already finds
+[[aeropress]]. A word that matches nothing is looked up again with typos allowed: `glaicer` still finds the glacier
+pages.
+
+**The best match is on top.** Notes named after your words come first, then the best matches: a word in the file
+name counts most, then in a heading, then in the properties. The matched words are highlighted in the results, even
+when they are spelled differently from what you typed.
+
 Tapping a hit opens the note at that line. In Read mode it scrolls to the matching paragraph and highlights it
 briefly.
+
+*Try it:* search `glaciers` and see "glacier" highlighted in the hits; type `aerop` and watch [[aeropress]] appear
+before you finish the word; then search `glaicer` and `hutte`.
 
 ## 10. Chat with the AI
 
