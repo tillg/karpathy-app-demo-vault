@@ -461,6 +461,17 @@ Nothing reaches GitHub until you say so:
 *Try it:* in [[avalanche-safety-kit#Checklist|avalanche-safety-kit › Checklist]], switch to Write mode and change a `[ ]` to `[x]`. Open
 **Changes**, look at the diff, then **Discard** it.
 
+### Secret scan
+
+Before it commits, the app checks the changes for secrets: API keys, access tokens, private keys. If it finds one,
+nothing is committed and nothing is pushed. The dialog names the file, the line and the kind of secret, and shows at
+most its first four characters. Remove the secret and commit again, or tap **Commit anyway** if it isn't a secret
+(that covers exactly the findings shown). Known false positives can go into `.gitleaksignore` at the repo root.
+
+*Try it:* in [[avalanche-safety-kit]], switch to Write mode and add a line with `ghp_` followed by 36 random
+letters and digits (a made-up token, never a real one). Tap **Commit & Push**: the dialog lists
+`avalanche-safety-kit.md`, the line and `github-pat`, and nothing is committed. Close it and **Discard** the change.
+
 ## 15. Conflicts
 
 If the same note changes in Obsidian (pushed to GitHub) and in the app (not committed yet), the app shows a
