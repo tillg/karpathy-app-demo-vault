@@ -238,6 +238,23 @@ The app renders what Obsidian renders. Open these pages in Read mode:
 | Footnotes | `[^1]` | [[brew-ratio]] (after "Gold Cup default") |
 | Hidden comments | `%% … %%` | [[brew-ratio]]: hidden in Read mode, visible in Write mode |
 
+### Dashboards (Bases tables)
+
+A fenced ` ```base ` block, written in [Obsidian Bases](https://obsidian.md/help/bases/syntax) syntax, shows a
+**live, read-only table** of the notes that match it: which folder, which tag, which property values, sorted and
+limited as you like. The same note shows the same table in Obsidian. The table refreshes by itself when a matching
+note changes, whether the AI, a pull or another device changed it. Tap a row to open its note; a wide table scrolls
+sideways inside its box on the phone.
+
+In Write mode the table stands in place of the block until the cursor moves into it, or you tap `</>`: then you edit
+the YAML. Not everything Bases can do is there yet: formulas or a cards view show "… not supported in v1". A `.base`
+file opens as a table too.
+
+*Try it:* open [[dashboards]] in Read mode: every tour, highest first, and the coffee sources. Tap **wildspitze** to
+open it. Then ask the chat *"I did the Similaun today"*: once the AI has updated the tour page, the *Last done*
+column shows the date without a reload. In Write mode, tap `</>` on the tour table and change `DESC` to `ASC`.
+Discard the changes in **Changes** afterwards.
+
 ## 8. Pictures, video and PDFs
 
 Notes show their media inline, as Obsidian does. These pages hold it:

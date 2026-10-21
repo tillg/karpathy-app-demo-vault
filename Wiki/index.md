@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [index]
-updated: 2026-10-04
+updated: 2026-10-21
 sources: []
 related: [log, mountains, coffee, mathematics]
 ---
@@ -16,6 +16,7 @@ New to the app? [[Karpathy Demo]] is a guided tour of its features, using this v
 
 - [[brew-log]] — Brew log
 - [[coffee]] — Coffee
+- [[dashboards]] — Dashboards: live tables of tours and coffee sources
 - [[hiking]] — Hiking, via ferratas and alpine tours
 - [[mathematics]] — Mathematics
 - [[mountains]] — Mountains

@@ -1,12 +1,18 @@
 ---
 type: topic
 tags: [log]
-updated: 2026-10-04
+updated: 2026-10-21
 sources: []
 related: [index]
 ---
 
 # Log
+
+## [2026-10-21] new | Dashboards
+
+- New: [[dashboards]] in `Wiki/topics/`: two live tables (Obsidian Bases blocks), all tours by summit height and the
+  coffee sources, newest first.
+- Updated: [[index]] links it.
 
 ## [2026-10-04] new | Karpathy Demo guide, media examples
 
