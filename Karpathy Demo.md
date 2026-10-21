@@ -306,6 +306,19 @@ Other things to know:
 - On a wide screen the **⇄** button swaps the columns, so the chat becomes the big main column and the note moves to
   the side.
 
+### Type ahead while the AI works
+
+You don't have to wait for an answer. A message you send while the AI works waits under the answer as a dashed
+**Queued** bubble, and the queued messages go out by themselves, in order, each when the one before is answered.
+**✏️** (Edit) takes a queued message back into the message box, **✕** drops it. **Stop** ends the current reply and
+puts every queued message back into the box, so nothing is lost. The queue lives on the server: it survives a reload
+and shows on your other devices too.
+
+*Try it:* in a new chat ask *"Summarize every coffee page in the vault, one paragraph each."* While it works, send
+*"Then list the brewers in [[coffee]] from easiest to hardest."* and a third message, *"And a joke about espresso."*
+Both wait as **Queued**; tap **✏️** on the joke to take it back into the box. When the summary is done, the brewer
+question goes out by itself.
+
 ### Chat titles
 
 A new chat is named after your first message. After your second message the AI gives the chat a real title that
