@@ -240,9 +240,15 @@ file or PDF from an address into a note. It saves the file as a new file next to
 addresses already in the chat work (see [section 13](#13-the-ai-on-the-web)). The result is an uncommitted change like
 any other.
 
+**Pictures follow the page.** When the AI's turn ends, a picture a page it wrote shows moves into that page's own
+folder, next to the `.md`: a flat page like `Wiki/entities/mathematicians/emmy-noether.md` first becomes
+`…/emmy-noether/emmy-noether.md`, and path-form links to both are rewritten. Pictures in `Sources/` stay with their
+source. The moves are uncommitted AI changes.
+
 *Try it:* open [[emmy-noether]], then ask the chat: *"Add a second picture of Emmy Noether to this note, from
-https://upload.wikimedia.org/wikipedia/commons/9/9e/Emmy_noether_postcard_1915.jpg"* Check the new file in **Changes**, then discard it or
-keep it.
+https://upload.wikimedia.org/wikipedia/commons/9/9e/Emmy_noether_postcard_1915.jpg"* When the answer is done, the file
+tree shows a folder `emmy-noether/` holding the page and the new picture. Check both in **Changes**, then discard
+them or keep them.
 
 **The AI can look at pictures.** The chat model reads text only, so for a picture it asks a separate image model
 through its `look_at_image` tool (a chip shows which file it looked at) and answers from that description. This works
@@ -482,7 +488,7 @@ new page and at [[log]].
 - No canvas or plugins.
 - No renaming or moving of notes, and no note transclusion: `![[Other note]]` shows a link.
 - Shell commands and Python scripts in AI skills don't run.
-- The AI saves a picture next to the note: it can't move a note into its own folder, copy a chat attachment into the vault, or save SVG.
+- The AI can't copy a chat attachment into the vault or save SVG.
 
 ---
 
