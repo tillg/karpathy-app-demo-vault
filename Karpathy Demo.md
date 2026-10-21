@@ -118,6 +118,17 @@ shows as a link instead). Links to vault pages open in the app; other links open
 *Try it:* open **Sources › demo › page.html**: a styled page with a coffee photo. Tap **brew ratio** to open the wiki
 page, then the back arrow to return. Switch to **Write** to see the HTML; your next note still opens in its own mode.
 
+### Emails
+
+An `.eml` file (a saved mail, or the `original.eml` the ingest leaves in each mail in `Input/`) shows the way a mail
+app shows it: the **subject** as the title, then From, To, Cc and the date, then the mail itself. A formatted mail
+shows with its formatting and its pictures in place; a picture from the internet shows as a link, so opening a mail
+never tells the sender you read it. Scripts never run. Attachments are cards: tap one to download it. Mails are
+read-only in the app, and one in an older encoding (umlauts in Latin-1, say) shows its text properly too.
+
+*Try it:* open **Sources › demo › brew-club.eml**: the AeroPress photo sits in the mail, the sponsor banner is only a
+link, and **brew-card.pdf** downloads when you tap it.
+
 ### Outline and note info
 
 The list button in the note header shows the page's **outline**: its headings, indented by level. On the phone it is
