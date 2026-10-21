@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-20
+updated: 2026-10-21
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -52,7 +52,8 @@ and each section has only **‹ Admin** back to it — leave admin mode from the
   of the deployment's secrets — which are set, which are missing — without ever showing a value.
 - **AI:** the model and **Web access** (see chapter 13). The server's settings files choose a default model; below
   the model field the app shows **Default: …**. A model you type there overrides the default for everyone until you
-  tap **Use default** and save.
+  tap **Use default** and save. The **Title model** (it names the chats, see chapter 10) and the **Vision model** (it
+  looks at pictures for the AI, see chapter 8) work the same way; the title model starts as the chat model.
 - **Usage:** how many tokens the AI used, per day, per model and per vault, over 7 or 30 days, with the cost when the
   provider reports it. Deleted chats drop out.
 - **Server:** CPU, memory, load and disk of the server over the last hour, day or week, and whether the AI harness
@@ -287,6 +288,16 @@ Other things to know:
 - One turn runs per vault at a time; a second chat waits its turn.
 - On a wide screen the **⇄** button swaps the columns, so the chat becomes the big main column and the note moves to
   the side.
+
+### Chat titles
+
+A new chat is named after your first message. After your second message the AI gives the chat a real title that
+says what it is about, in the chat's language, and the chat list shows it. Every ten messages the AI checks whether
+the chat has moved on to something else; if so, a bar above the message field asks *Rename this chat to "…"?*:
+**Rename** takes the new title, **Keep** keeps the old one.
+
+*Try it:* start a new chat with *"hi"*, then ask *"Which brewer should I use for a natural-process Ethiopian
+coffee?"*. When the answer is done, open the chat list: the chat is no longer called "hi".
 
 ### Context meter
 
