@@ -200,16 +200,29 @@ you opened and when Back would leave the vault.
 ### The graph
 
 The graph button (the hexagon of dots in the sidebar header) shows the graph in the note pane: every note of the
-`Wiki` folder as a dot in 3D and every link between two notes as a line. "Show all" adds the notes outside `Wiki`
+`Wiki` folder as a dot in 3D and every link between two notes as a line. **All** adds the notes outside `Wiki`
 (the sources' raw files, this guide). Well-linked pages are bigger dots; the colour is the page's `type` (entities
 blue, concepts, sources, topics, syntheses each their own colour, see the legend); the open note is orange.
 [[index]] and [[log]] sit in the middle, because almost every page links to them. While it loads, a small graph
 breathes; once built, the graph stays for the session, so the second open is instant.
 
 *Try it:* open [[aeropress]], tap the graph button, drag to turn the graph, pinch or scroll to zoom. Untick `entity`
-in the legend: only concepts, sources, topics and syntheses are left (the app remembers it). Tap "Show all",
+in the legend: only concepts, sources, topics and syntheses are left (the app remembers it). Tap **All**,
 then close the graph (✕ or Back) — you are back on [[aeropress]] — and open it again: no waiting. Tap a dot to open
 that note.
+
+### Local graph
+
+**Local graph**, at the foot of the outline (the list button in the note bar), shows just the open page's
+neighbourhood: the page itself (orange), the pages it links to and the pages that link to it, with every link between
+them. **Depth 1 | 2** below the graph adds one more ring of links; since nearly every page links to [[index]], depth 2
+pulls in most of the wiki. The local graph lies flat, with each page's name under its dot, and uses the same colours
+and legend as the big graph; tap a dot to open that page. The bar on top switches **Local | Wiki | All**, and the
+graph button in the sidebar comes back to whichever you used last, for the note open then.
+
+*Try it:* open [[aeropress]], tap the list button and then **Local graph**: [[moka-pot]], [[french-press]],
+[[brew-ratio]], [[coffee]], [[brew-log]] and [[which-brewer-for-which-bean]] sit around it. Switch to **2** and watch
+the wiki fill in, then tap **Wiki** for the 3D graph and **Local** to come back.
 
 ## 7. Obsidian-style Markdown
 
