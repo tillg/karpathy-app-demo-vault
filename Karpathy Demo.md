@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-21
+updated: 2026-10-22
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -351,6 +351,20 @@ Other things to know:
 - One turn runs per vault at a time; a second chat waits its turn.
 - On a wide screen the **⇄** button swaps the columns, so the chat becomes the big main column and the note moves to
   the side.
+
+### When something fails
+
+A step that fails on its own (a page that doesn't exist, a web page that won't load) turns its chip red; tap it to
+read the error. The AI sees the error too and carries on.
+
+When the whole answer fails, a red pill ends it and says where the failure came from: **During tool websearch:**
+… when a tool was running at that moment, **From the model qwen3-8b:** … when the model's own request failed (out of
+credits, rate limit, provider down). The pill stays after a reload. Errors of the app itself (a pull before the turn
+failed, the AI service restarted) say so in their own words.
+
+*Try it:* ask *"Read the page does-not-exist and tell me what it says."* The read chip turns red; tap it to see
+*File not found*. A failed answer can't be provoked on purpose; when one happens, the pill tells you whether to look
+at a tool or at the model and its credits.
 
 ### Type ahead while the AI works
 
