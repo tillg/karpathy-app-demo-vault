@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-22
+updated: 2026-10-27
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -571,8 +571,16 @@ server with mail set up, mails sent to the vault's address arrive there every 15
   `move_to_sources`; the count goes down as it works. A vault without an `ingest` skill shows the count but no button.
 - Waiting sources don't trigger the commit reminder; the pages and the moves are uncommitted changes like any other
   AI edit.
-- **⚙ › Secrets & keys › Instagram** connects the server to Instagram (username, password, a 2FA code if Instagram asks) so
-  Instagram links can be fetched; the password is not stored.
+- **Instagram** blocks the server's IP, so an **Instagram worker** on a home machine (a Mac or a Raspberry Pi with your
+  Instagram session) scrapes the posts: it asks the server for one waiting link at a time, paced like a person
+  (08:00–23:00, at most about 50 posts a day), and uploads the result, which shows up in `Input/` as an `insta-…`
+  folder. Until a worker gets to it, an Instagram link just waits. **⚙ › Secrets & keys › Instagram** shows the
+  workers (name, last seen, state such as `idle`, `night` or `needs-login`) and the queue. Setup: `docs/instagram-worker.md`
+  in the app's repo.
+
+*Try it (Instagram):* open **⚙ › Secrets & keys › Instagram** and check that a worker was seen in the last minutes. Mail
+yourself an Instagram post link to the vault's address; between 08:00 and 23:00 its `insta-…` folder appears in
+`Input/` within a few minutes of the mail being fetched.
 
 *Try it:* this vault has one source waiting, `Input/web-2026-10-08-moka-pot-basics` (a clipped page on the moka pot).
 Tap **Ingest** next to `Input · 1`, watch the chat write [[moka-pot-basics]] and move the folder, then look at the
