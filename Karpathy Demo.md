@@ -1,7 +1,7 @@
 ---
 type: topic
 tags: [guide, demo]
-updated: 2026-10-27
+updated: 2026-11-01
 sources: []
 related: [index, log, brew-ratio, homeomorphism, avalanche-safety-kit, aeropress]
 ---
@@ -56,12 +56,17 @@ and each section has only **‹ Admin** back to it — leave admin mode from the
   looks at pictures for the AI, see chapter 8) work the same way; the title model starts as the chat model.
 - **Usage:** how many tokens the AI used, per day, per model and per vault, over 7 or 30 days, with the cost when the
   provider reports it. Deleted chats drop out.
+- **Instagram:** when a worker on your own machine scrapes Instagram posts and Reels, how many are still in line,
+  how many were scraped per hour or day, the current pace, and when the line would be empty at that pace (a dashed
+  line runs down to that date).
 - **Server:** CPU, memory, load and disk of the server over the last hour, day or week, and whether the AI harness
   is up.
 
 *Try it:* tap the gear, open **Usage** and look at today's bar; ask the AI something in a chat, come back and watch it
 grow. Then open **Server** and switch between **1 hour** and **7 days**. On the phone, notice there is no **Done**
 inside a section: go **‹ Admin** first.
+
+*Try it:* open **Instagram**, check **In line** and **Done**, then switch to **7 days** to see the daily bars.
 
 ## 4. Files and notes
 
